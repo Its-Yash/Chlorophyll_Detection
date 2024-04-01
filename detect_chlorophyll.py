@@ -23,7 +23,6 @@ def detect_chlorophyll(image_path):
     """Robustly detects chlorophyll in an image.
 
     Args:
-
         image_path (str): Path to the image file.
     """
 
@@ -71,10 +70,14 @@ def detect_chlorophyll(image_path):
         chlorophyll_percentage = (white_pixels / total_pixels) * 100
 
         # Display results
-        cv2.destroyAllWindows()
         cv2.imshow('Original Image', image)
         cv2.imshow('Chlorophyll Detection', result)
-        cv2.waitKey(0)
+
+        # Wait for 2 seconds
+        cv2.waitKey(2000)
+
+        # Close windows
+        cv2.destroyAllWindows()
 
         # Print the result with % symbol
         print(f"Image: {image_path}")
@@ -91,6 +94,3 @@ for image_filename in os.listdir(image_folder):
     if image_filename.endswith(".jpeg"):
         image_path = os.path.join(image_folder, image_filename)
         detect_chlorophyll(image_path)
-
-# Close all windows
-cv2.destroyAllWindows()
