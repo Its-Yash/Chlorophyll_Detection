@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 # Folder containing images
-image_folder = "sample_images"  # Replace with your actual folder path
+image_folder = "sample_images"  # Replace with your actual folder path and check for image extensions to be the same.
 
 # Define progress bar parameters
 progress_bar_length = 20
